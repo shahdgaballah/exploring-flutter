@@ -39,77 +39,103 @@ class HomeScreen extends StatelessWidget {
           ))
         ],
       ),
-      body: Container(
-        color: Colors.purpleAccent,
-        width: double.infinity,
+     // body: Container(
+        //color: Colors.purpleAccent,
+        //width: double.infinity,
        // height: double.infinity, //with row
-        child: Column(
-         // mainAxisSize: MainAxisSize.min,
-          //mainAxisAlignment: MainAxisAlignment.start,
-         //crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            // Expanded(
-            //  // flex: 1,
-            //   child: Container(
-            //     height: 200,
-            //     color: Colors.cyanAccent,
-            //     child: Text('First',
-            //       style: TextStyle(color: Colors.red,
-            //           fontSize: 50,
-            //           fontWeight: FontWeight.bold,
-            //       )),
-            //   ),
-            // ),
-            // Expanded(
-            //   child: Container(
-            //     height: 200,
-            //     color: Colors.cyanAccent,
-            //     child: Text('Second',
-            //         style: TextStyle(color: Colors.red,
-            //           fontSize: 50,
-            //           fontWeight: FontWeight.bold,
-            //         )),
-            //   ),
-            // ),
-            // Expanded(
-            //   child: Container(
-            //     height: 200,
-            //     color: Colors.cyanAccent,
-            //     child: Text('Third',
-            //         style: TextStyle(color: Colors.red,
-            //           fontSize: 50,
-            //           fontWeight: FontWeight.bold,
-            //         )),
-            //   ),
-            // ),
-            Container(
-              width: 100,
-              height: 100,
-              decoration: BoxDecoration(
-                color: Colors.cyanAccent,
-                image: DecorationImage(
-                  image: NetworkImage(
-                    'https://www.google.com/imgres?q=flowers&imgurl=https%3A%2F%2Fc02.purpledshub.com%2Fuploads%2Fsites%2F40%2F2023%2F08%2FJI230816Cosmos220-6d9254f-edited-scaled.jpg%3Fw%3D1029%26webp%3D1&imgrefurl=https%3A%2F%2Fwww.gardensillustrated.com%2Fplants%2Fpink-flowers&docid=jmqsNpSGWXHuqM&tbnid=PIdJ6OAwitIejM&vet=12ahUKEwjT09WF1rmMAxXMUEEAHU5LKhcQM3oECHIQAA..i&w=1029&h=772&hcb=2&ved=2ahUKEwjT09WF1rmMAxXMUEEAHU5LKhcQM3oECHIQAA',
-                ),
+      //  child:
+        body: Container(
+          color: Colors.red,
+          child: Column(
+           // mainAxisSize: MainAxisSize.min,
+           // mainAxisAlignment: MainAxisAlignment.center,
+           // crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              // Expanded(
+              //  // flex: 1,
+              //   child: Container(
+              //     height: 200,
+              //     color: Colors.cyanAccent,
+              //     child: Text('First',
+              //       style: TextStyle(color: Colors.red,
+              //           fontSize: 50,
+              //           fontWeight: FontWeight.bold,
+              //       )),
+              //   ),
+              // ),
+              // Expanded(
+              //   child: Container(
+              //     height: 200,
+              //     color: Colors.cyanAccent,
+              //     child: Text('Second',
+              //         style: TextStyle(color: Colors.red,
+              //           fontSize: 50,
+              //           fontWeight: FontWeight.bold,
+              //         )),
+              //   ),
+              // ),
+              // Expanded(
+              //   child: Container(
+              //     height: 200,
+              //     color: Colors.cyanAccent,
+              //     child: Text('Third',
+              //         style: TextStyle(color: Colors.red,
+              //           fontSize: 50,
+              //           fontWeight: FontWeight.bold,
+              //         )),
+              //   ),
+              // ),
+              Padding(
+                padding: const EdgeInsetsDirectional.all(50.0),
+                child: Stack(
+                  alignment: AlignmentDirectional.bottomCenter,
+                  children: [
+                    Container(
+                      width: 500,
+                      height: 500,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadiusDirectional.circular(20.0),
+                        //color: Colors.cyanAccent,
+                        image: DecorationImage(
+                          image: NetworkImage(
+                            'https://img.freepik.com/free-photo/bouquet-flowers-with-white-background_1232-1088.jpg?t=st=1743610158~exp=1743613758~hmac=ab883f0c58394545d736791448ffe426b12c25c1a69d76a57d7e18967403eb78&w=740',
+                          ),
+                          fit: BoxFit.cover, //to fit the img in the container
+                        ),
+                      ),
+                        //height: 150,
+                        // child: Text('App Body',
+                        //     style: TextStyle(color: Colors.red,
+                        //       fontSize: 50,
+                        //       fontWeight: FontWeight.bold,
+                        //     )),
+                      ),
+                    Container(
+                      color: Colors.red.withValues(
+                        alpha: .6
+                      ),
+                        width: 300,
+
+                        child: Text('Flowers',
+                         textAlign: TextAlign.center,
+                          style:
+                          TextStyle(color: Colors.amber,
+                              fontWeight: FontWeight.bold,
+                          fontSize: 30.0),))
+                  ],
                 ),
               ),
-                //height: 150,
-                child: Text('App Body',
-                    style: TextStyle(color: Colors.red,
-                      fontSize: 50,
-                      fontWeight: FontWeight.bold,
-                    )),
-              ),
 
 
 
 
-          ],
+            ],
+          ),
         ),
-      ),
+      );
 
 
 
-    );
+  //  );
   }
 }
