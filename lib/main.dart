@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/home_screen.dart';
-import 'package:my_app/login_screen.dart';
+import 'package:my_app/messenger_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,9 +15,10 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        useMaterial3: false
+       // colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: LoginScreen(),
+      home: MessengerScreen(),
     );
   }
 }
