@@ -65,8 +65,6 @@ class BuildChat extends StatelessWidget {
         Text('02:00 PM',
           style: TextStyle(
             fontWeight: FontWeight.bold,
-
-
           ),)
       ],
     );
