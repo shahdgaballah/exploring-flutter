@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         //useMaterial3: false
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: WhatsappUi(),
+      home: MessengerScreen(),
     );
   }
 }

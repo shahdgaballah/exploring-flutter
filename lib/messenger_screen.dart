@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/messenger_model.dart';
 
 import 'build_chat.dart';
 import 'build_story.dart';
@@ -59,7 +60,7 @@ class MessengerScreen extends StatelessWidget {
               Container(
                 width: double.infinity,
                 decoration: BoxDecoration(
-                  color: Colors.grey[500],
+                  color: Colors.grey[300],
                   borderRadius: BorderRadius.circular(20.0),
 
                 ),
@@ -67,10 +68,10 @@ class MessengerScreen extends StatelessWidget {
                   padding: const EdgeInsets.all(3.0),
                   child: Row(
                     children: [
-                      Icon(Icons.search, size: 20.0, color: Colors.black87),
+                      Icon(Icons.search, size: 20.0, color: Colors.grey),
                       SizedBox(width: 20.0,),
                       Text('Search',
-                        style: TextStyle(fontSize: 20.0, color: Colors.black87) ,)
+                        style: TextStyle(fontSize: 20.0, color: Colors.grey) ,)
                     ],
                   ),
                 ),
@@ -85,9 +86,9 @@ class MessengerScreen extends StatelessWidget {
                 child: ListView.separated(
                   scrollDirection: Axis.horizontal,
                     physics: BouncingScrollPhysics(),
-                    itemBuilder: (context, index)=>BuildStory(),
+                    itemBuilder: (context, index)=>BuildStory(model: messenger[index],),
                     separatorBuilder: (context, index)=>SizedBox(width: 10.0,),
-                    itemCount: 15),
+                    itemCount: messenger.length),
               ),
 
 
@@ -99,9 +100,9 @@ class MessengerScreen extends StatelessWidget {
               ListView.separated(
                   shrinkWrap: true,
                     physics: NeverScrollableScrollPhysics(),
-                    itemBuilder: (context, index)=>BuildChat(),
+                    itemBuilder: (context, index)=>BuildChat(model: messenger[index],),
                     separatorBuilder: (context, index)=> SizedBox(height:20.0),
-                    itemCount: 15),
+                    itemCount: messenger.length),
 
 
 

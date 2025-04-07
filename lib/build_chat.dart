@@ -1,8 +1,10 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
+import 'package:my_app/messenger_model.dart';
 
 class BuildChat extends StatelessWidget {
-  const BuildChat({super.key});
+  final MessengerModel model;
+  const BuildChat({super.key, required this.model});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +15,7 @@ class BuildChat extends StatelessWidget {
             children: [
               CircleAvatar(
                 radius: 25.0,
-                backgroundImage: NetworkImage('https://img.freepik.com/premium-vector/flat-illustration-summertime-season_23-2150320849.jpg?w=996'),
+                backgroundImage: NetworkImage(model.image),
               ),
               CircleAvatar(
                 radius: 8.5,
@@ -34,7 +36,7 @@ class BuildChat extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('Shahd Muhammed Gaballah Shahd Muhammed Gaballah Shahd Muhammed Gaballah',
+              Text(model.name,
                 style: TextStyle(
                     fontSize: 18.0
                 ),
@@ -43,7 +45,7 @@ class BuildChat extends StatelessWidget {
               SizedBox(
                 height: 5.0,
               ),
-              Text('Hello my name is Shahd Muhammed Gaballah Hello my name is Shahd Muhammed Gaballah Hello my name is Shahd Muhammed Gaballah',
+              Text(model.body,
                 style: TextStyle(
                     fontSize: 18.0,
                     fontWeight: FontWeight.bold
@@ -62,7 +64,7 @@ class BuildChat extends StatelessWidget {
         SizedBox(
           width: 10.0,
         ),
-        Text('02:00 PM',
+        Text('4:43 PM',
           style: TextStyle(
             fontWeight: FontWeight.bold,
           ),)

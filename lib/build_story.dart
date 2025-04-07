@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:my_app/messenger_model.dart';
 
 class BuildStory extends StatelessWidget {
-  const BuildStory({super.key});
+  final MessengerModel model;
+  const BuildStory({super.key, required this.model});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +17,9 @@ class BuildStory extends StatelessWidget {
               children: [
                 CircleAvatar(
                   radius: 25.0,
-                  backgroundImage: NetworkImage('https://img.freepik.com/premium-vector/flat-illustration-summertime-season_23-2150320849.jpg?w=996'),
+                  backgroundImage: NetworkImage(
+                    model.image
+                  ),
                 ),
                 CircleAvatar(
                   radius: 8.5,
@@ -30,7 +34,7 @@ class BuildStory extends StatelessWidget {
           SizedBox(
             height: 5.0,
           ),
-          Text('Shahd Muhammed Gaballah',
+          Text(model.name,
             textAlign: TextAlign.center,
             maxLines: 2,
             overflow: TextOverflow.ellipsis,)
