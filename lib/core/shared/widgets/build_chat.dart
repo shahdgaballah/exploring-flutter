@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-import 'package:my_app/messenger_model.dart';
+import 'package:my_app/core/features/messenger/data/model/messenger_model.dart';
 
 class BuildChat extends StatelessWidget {
   final MessengerModel model;
@@ -64,7 +64,7 @@ class BuildChat extends StatelessWidget {
         SizedBox(
           width: 10.0,
         ),
-        Text('4:43 PM',
+        Text(model.time,
           style: TextStyle(
             fontWeight: FontWeight.bold,
           ),)

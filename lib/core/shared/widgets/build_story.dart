@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:my_app/messenger_model.dart';
+import 'package:my_app/core/features/messenger/data/model/messenger_model.dart';
 
 class BuildStory extends StatelessWidget {
   final MessengerModel model;

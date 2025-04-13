@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/core/features/messenger/presentation/screens/messenger_screen.dart';
+import 'package:my_app/core/features/whatsapp/presentation/screens/whatsapp_ui.dart';
 
-import 'counter_screen.dart';
+import 'core/features/counter/presentation/screens/counter_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,7 +21,7 @@ class MyApp extends StatelessWidget {
         //useMaterial3: false
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: CounterScreen(),
+      home: WhatsappUi(),
     );
   }
 }
