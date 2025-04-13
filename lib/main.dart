@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/core/features/login/presentation/screens/login_screen.dart';
 import 'package:my_app/core/features/messenger/presentation/screens/messenger_screen.dart';
 import 'package:my_app/core/features/whatsapp/presentation/screens/whatsapp_ui.dart';
 
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
         //useMaterial3: false
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: WhatsappUi(),
+      home: LoginScreen(),
     );
   }
 }

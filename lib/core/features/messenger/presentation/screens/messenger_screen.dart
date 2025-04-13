@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/core/features/messenger/data/model/messenger_model.dart';
 
-import '../../../../shared/widgets/build_chat.dart';
-import '../../../../shared/widgets/build_story.dart';
+import '../widgets/build_chat.dart';
+import '../widgets/build_story.dart';
 
 class MessengerScreen extends StatelessWidget {
   const MessengerScreen({super.key});
