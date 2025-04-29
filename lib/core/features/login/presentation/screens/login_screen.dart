@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/core/shared/widgets/my_button.dart';
 import 'package:my_app/core/shared/widgets/my_form_field.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 import '../../../../shared/widgets/my_text_button.dart';
 
@@ -11,11 +12,35 @@ class LoginScreen extends StatefulWidget {
   @override
   State<LoginScreen> createState() => _LoginScreenState();
 }
-var emailController = TextEditingController();
-var passwordController = TextEditingController();
-var formKey = GlobalKey<FormState>();
-bool isPassword = true;
 class _LoginScreenState extends State<LoginScreen> {
+  var emailController = TextEditingController();
+  var passwordController = TextEditingController();
+  var formKey = GlobalKey<FormState>();
+  bool isPassword = true;
+
+  Future<void> insert() async {
+    if (!formKey.currentState!.validate()) return;
+    try {
+      final response = await Supabase.instance.client.from('login').insert({
+        "Email": emailController.text,
+        "Password": passwordController.text,
+
+      });
+
+      if (response.error == null) {
+        print("task added successfully!");
+      } else {
+        print("error: ${response.error!.messege}");
+      }
+    } catch (e) {
+      print("error: ${(e)}");
+    }
+  }
+ @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
 
@@ -89,9 +114,9 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
 
 
-               MyButton(onPressed: () {
+               MyButton(onPressed:insert, /* () {
                  if (formKey.currentState!.validate()){}
-               },
+               },*/
                    text: 'Login',
                    background: Colors.teal,
                    isUpperCase: false,
